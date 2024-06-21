@@ -1,0 +1,21 @@
+What happens:If holding an item in the inventory and rejoining the world, it crashes
+
+Fix by who: Liminal
+
+How to fix:
+
+net.minecraft.src.ItemStack
+
+replace function readFromNBT with:
+
+public void readFromNBT(NBTTagCompound nbtCompound) {
+        this.itemID = (int)nbtCompound.getShort("id") & 65535;
+        
+        try {
+            this.stackSize = nbtCompound.getInteger("Count");
+        } catch (ClassCastException classCastException3) {
+            this.stackSize = nbtCompound.getByte("Count");
+        }
+
+        this.itemDmg = nbtCompound.getShort("Damage");
+}
