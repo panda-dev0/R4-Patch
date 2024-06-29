@@ -1,0 +1,9 @@
+What happens: Essence cloner texture is the same as Essence transformer
+
+Fix by who: [0]
+
+How to fix:
+
+ext1605.ExtBlocks
+
+replace line 172 with EssenceCloner = (new BlockEssenceCloner(154, 125, 126, 127)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundMetalFootstep).setPickaxeEffective(true).setEssValue(32).setName("Essence Cloner");
