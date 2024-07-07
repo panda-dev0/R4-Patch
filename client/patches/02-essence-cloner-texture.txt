@@ -1,3 +1,5 @@
+OUTDATED
+
 What happens: Essence cloner texture is the same as Essence transformer
 
 Fix by who: [0]
